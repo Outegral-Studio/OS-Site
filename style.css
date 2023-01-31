@@ -81,3 +81,8 @@ body::-webkit-scrollbar-thumb:hover {
 body::-webkit-scrollbar-corner {
     border-radius: 12px;
 }
+
+::selection {
+    color: #292e33;
+    background: #D8D5D0;
+}
