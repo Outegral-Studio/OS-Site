@@ -24,8 +24,8 @@ header {
     justify-content: center;
 
     background: #292e33;
-    background: -webkit-linear-gradient(#1d26714C, #c337634C), rgba(195, 55, 100, 0.8), url(/images/HCTS_20191214.jpg)  no-repeat top center;
-    background: linear-gradient(#1d26714C, #c337634C), url(/images/HCTS_20191214.jpg)  no-repeat top center;
+    background: -webkit-linear-gradient(#1d26714C, #c337634C), rgba(195, 55, 100, 0.8), url(./images/HCTS_20191214.jpg)  no-repeat top center;
+    background: linear-gradient(#1d26714C, #c337634C), url(./images/HCTS_20191214.jpg)  no-repeat top center;
     background-size: cover;
 }
 
