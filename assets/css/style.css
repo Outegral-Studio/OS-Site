@@ -1,11 +1,12 @@
 /* Color theme related */
 :root,
     html[data-theme='dark'] {
-        --bg-color: #292E33;
+        --bg-color: #0D1117;
         --text-color: #EEEEEE;
         --sel-text-color: #292E33;
         --sel-bg-color: #D8D5D0;
-        --footer-color: #111111;
+        --navbar-color: #292E33;
+        --footer-color: #292E33;
         --thumb-color: #D8D5D0;
         --thumb-hover-color: #EAE7E1;
     }
@@ -15,7 +16,8 @@
         --text-color: #111111;
         --sel-text-color: #FFFFFF;
         --sel-bg-color: #FFFFFF;
-        --footer-color: #111111;
+        --navbar-color: #EEEEEE;
+        --footer-color: #292E33;
         --thumb-color: #FFFFFF;
         --thumb-hover-color: #FFFFFF;
     }
@@ -46,9 +48,16 @@ header {
     justify-content: center;
 
     background: var(--bg-color);
-    background: -webkit-linear-gradient(#1d26714C, #c337634C), url(../gallery/HCTS_20191214.jpg) no-repeat top center;
-    background: linear-gradient(#1d26714C, #c337634C), url(../gallery/HCTS_20191214.jpg) no-repeat top center;
+    background: -webkit-linear-gradient(#1D26714C, #C337634C), url(../gallery/HCTS_20191214.jpg) no-repeat top center;
+    background: linear-gradient(#1D26714C, #C337634C), url(../gallery/HCTS_20191214.jpg) no-repeat top center;
     background-size: cover;
+
+    -webkit-box-shadow: 0em 0em 2em 1em #0000004C;
+    box-shadow: 0em 0em 2em 1em #0000004C;
+}
+
+.menu {
+    display: flex;
 }
 
 footer {
@@ -59,30 +68,36 @@ footer {
 /* ------------------------------------------------------------ */
 
 /* Custom text classes */
+.navbar {
+    /* TBF: Offset responsive */
+    background-color: transparent;
+    transition: 0.5s;
+}
 .navbar-brand img {
-    width: 2rem;
+    width: auto;
     height: 2rem;
 }
 
-.navbar-opt,
-    .navbar-opt {
+.btn-toggle,
+    .btn-toggle {
         color: var(--text-color);
-        font-family: 'Unbounded';
-        font-weight: 500;
         font-size: 1rem;
+        border: none !important;
     }
-    .navbar-opt:hover {
-        color: var(--text-color);
-        text-decoration: none;
+    .btn-toggle:hover, .btn-toggle:focus, .btn-toggle:active {
+        color: var(--text-color) !important;
+        text-decoration: none !important;
+        border: none !important;
     }
 
 .heading {
     color: var(--text-color);
     font-family: 'Unbounded';
     font-weight: 700;
-    font-size: 4rem;
-
+    font-size: 3.5rem;
     text-shadow: 0.1em 0.1em 0.3em var(--bg-color);
+
+    line-height: 1.2em;
 }
 
 .subheading {
@@ -90,7 +105,6 @@ footer {
     font-family: 'Unbounded';
     font-weight: 500;
     font-size: 1.5rem;
-
     text-shadow: 0.1em 0.1em 0.3em var(--bg-color);
 }
 

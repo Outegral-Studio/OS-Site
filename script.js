@@ -6,6 +6,16 @@ const fade = () => {
 };
 window.addEventListener('load', fade);
 
+// Navbar color transition
+const handleScroll = () => {
+    if(window.pageYOffset>0){
+        if(this.view.topOfPage) this.view.topOfPage = false
+      } else {
+        if(!this.view.topOfPage) this.view.topOfPage = true
+      }
+}
+window.addEventListener('scroll', this.handleScroll);
+
 // Set color scheme
 const setTheme = () => {
     var theme = document.documentElement.getAttribute("data-theme");
