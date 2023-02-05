@@ -2,7 +2,7 @@
 :root,
     html[data-theme='dark'] {
         --bg-color: #292E33;
-        --text-color: #FFFFFF;
+        --text-color: #EEEEEE;
         --sel-text-color: #292E33;
         --sel-bg-color: #D8D5D0;
         --footer-color: #111111;
@@ -59,11 +59,9 @@ footer {
 /* ------------------------------------------------------------ */
 
 /* Custom text classes */
-.title {
-    color: var(--text-color);
-    font-family: 'Unbounded';
-    font-weight: 700;
-    font-size: 60px;
+.navbar-brand img {
+    width: 2rem;
+    height: 2rem;
 }
 
 .navbar-opt,
@@ -78,17 +76,49 @@ footer {
         text-decoration: none;
     }
 
-.subtitle {
+.heading {
+    color: var(--text-color);
+    font-family: 'Unbounded';
+    font-weight: 700;
+    font-size: 4rem;
+
+    text-shadow: 0.1em 0.1em 0.3em var(--bg-color);
+}
+
+.subheading {
+    color: var(--text-color);
+    font-family: 'Unbounded';
+    font-weight: 500;
+    font-size: 1.5rem;
+
+    text-shadow: 0.1em 0.1em 0.3em var(--bg-color);
+}
+
+.title {
     color: var(--text-color);
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 400;
+    font-size: 2rem;
+
+    text-align: left;
+    line-height: 2em;
+}
+
+p {
+    color: var(--text-color);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 100;
+    font-size: 1rem;
+
+    text-align: justify;
+    line-height: 1.65rem;
 }
 
 .context {
     color: var(--text-color);
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 100;
-    text-align: justify;
+    font-size: 1rem;
 }
 
 /* ------------------------------------------------------------ */
