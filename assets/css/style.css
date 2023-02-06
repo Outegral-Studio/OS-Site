@@ -1,6 +1,14 @@
-/* Color theme related */
+/* -------------------------- LAYOUT -------------------------- */
+
+html {
+    font-size: 18px;
+}
+
+/* Color theme */
 :root,
     html[data-theme='dark'] {
+        --g1-color: #1D26714C;
+        --g2-color: #C337634C;
         --bg-color: #0D1117;
         --text-color: #EEEEEE;
         --sel-text-color: #292E33;
@@ -12,6 +20,8 @@
     }
     
     html[data-theme='light'] {
+        --g1-color: #474b744c;
+        --g2-color: #c07c924c;
         --bg-color: #FFFFFF;
         --text-color: #111111;
         --sel-text-color: #FFFFFF;
@@ -22,6 +32,22 @@
         --thumb-hover-color: #FFFFFF;
     }
 
+* {
+    transition-property: var(--g1-color), 
+                         var(--g2-color), 
+                         var(--bg-color), 
+                         var(--text-color), 
+                         var(--sel-text-color), 
+                         var(--sel-bg-color), 
+                         var(--navbar-color), 
+                         var(--footer-color), 
+                         var(--thumb-color), 
+                         var(--thumb-hover-color);
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    transition-duration: 0.15s;
+}
+
 body {
     background-color: var(--bg-color);
     overflow: overlay;
@@ -30,6 +56,7 @@ body {
 .main-layout {
     min-height: 100vh;
     min-height: 100dvh;
+
     display: grid;
     grid-template-rows: 
         auto
@@ -48,8 +75,8 @@ header {
     justify-content: center;
 
     background: var(--bg-color);
-    background: -webkit-linear-gradient(#1D26714C, #C337634C), url(../gallery/HCTS_20191214.jpg) no-repeat top center;
-    background: linear-gradient(#1D26714C, #C337634C), url(../gallery/HCTS_20191214.jpg) no-repeat top center;
+    background: -webkit-linear-gradient(var(--g1-color), var(--g2-color)), url(../gallery/HCTS_20191214.jpg) no-repeat top center;
+    background: linear-gradient(var(--g1-color), var(--g2-color)), url(../gallery/HCTS_20191214.jpg) no-repeat top center;
     background-size: cover;
 
     -webkit-box-shadow: 0em 0em 2em 1em #0000004C;
@@ -62,30 +89,33 @@ header {
 
 footer {
     display: grid;
+
     background-color: var(--footer-color);
 }
 
-/* ------------------------------------------------------------ */
+/* -------------------------- CUSTOM -------------------------- */
 
-/* Custom text classes */
 .navbar {
-    /* TBF: Offset responsive */
     background-color: transparent;
-    transition: 0.5s;
+    /* background-color: var(--navbar-color) !important; */
 }
+
 .navbar-brand img {
     width: auto;
-    height: 2rem;
+    height: 1.5rem;
 }
 
 .btn-toggle,
     .btn-toggle {
         color: var(--text-color);
-        font-size: 1rem;
+        /* font-size: 1.5rem !important; */
+
         border: none !important;
+        align-items: center;
     }
     .btn-toggle:hover, .btn-toggle:focus, .btn-toggle:active {
         color: var(--text-color) !important;
+
         text-decoration: none !important;
         border: none !important;
     }
@@ -94,7 +124,7 @@ footer {
     color: var(--text-color);
     font-family: 'Unbounded';
     font-weight: 700;
-    font-size: 3.5rem;
+    font-size: 3rem;
     text-shadow: 0.1em 0.1em 0.3em var(--bg-color);
 
     line-height: 1.2em;
@@ -104,14 +134,14 @@ footer {
     color: var(--text-color);
     font-family: 'Unbounded';
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-shadow: 0.1em 0.1em 0.3em var(--bg-color);
 }
 
 .title {
     color: var(--text-color);
     font-family: 'Noto Sans TC', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 2rem;
 
     text-align: left;
@@ -121,21 +151,23 @@ footer {
 p {
     color: var(--text-color);
     font-family: 'Noto Sans TC', sans-serif;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 1rem;
 
     text-align: justify;
-    line-height: 1.65rem;
+    line-height: 2rem;
 }
 
 .context {
     color: var(--text-color);
     font-family: 'Noto Sans TC', sans-serif;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 1rem;
+
+    text-align: center;
 }
 
-/* ------------------------------------------------------------ */
+/* -------------------------- PSEUDO -------------------------- */
 
 /* Scrollbar */
 body::-webkit-scrollbar {
@@ -173,7 +205,7 @@ body::-webkit-scrollbar-corner {
 .loader {
     position: fixed;
     inset: 0;
-    z-index: 100;
+    z-index: 10000;
 
     display: grid;
     place-items: center;
