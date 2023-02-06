@@ -1,20 +1,9 @@
 // Pre-loader
 const fade = () => {
-    const wrapper = 
-    document.querySelector('.loader');
+    const wrapper = document.querySelector('.loader');
     wrapper.classList.add('fade');
-};
-window.addEventListener('load', fade);
-
-// Navbar color transition
-const handleScroll = () => {
-    if(window.pageYOffset>0){
-        if(this.view.topOfPage) this.view.topOfPage = false
-      } else {
-        if(!this.view.topOfPage) this.view.topOfPage = true
-      }
 }
-window.addEventListener('scroll', this.handleScroll);
+window.addEventListener('load', fade);
 
 // Set color scheme
 const setTheme = () => {
