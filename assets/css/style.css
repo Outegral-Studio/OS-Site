@@ -115,7 +115,7 @@ footer {
     place-items: center;
     transition: opacity 0.5s, visibility 1s;
     transition-timing-function: ease-in-out;
-    transition-delay: 1s;
+    transition-delay: 0s;
 
     background: #EAE7E1 url(../load.gif) no-repeat center center;
     background-size: 25%;
