@@ -23,8 +23,24 @@
         <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
         <script src="./assets/js/script.js"></script>
 
-        <!-- TBF: Infinite pre-loader -->
-        <div class="loader"></div>
+        <!-- <div class="loader"></div> -->
+
+        <!-- -->
+        <div id="carouselHeader" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active d-flex">
+                    <img src="./assets/gallery/HCTS_20191214.jpg" class="d-block" alt="test">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
         <!-- Main layout -->
         <div class="layout-main">
@@ -43,6 +59,7 @@
                         </button>
                     </div>
                 </nav>
+                
                 <h1 class="heading text-uppercase">Outegral Studio</h1>
                 <span class="subheading mt-3">"Every outegral is infinity."</span>
             </header>

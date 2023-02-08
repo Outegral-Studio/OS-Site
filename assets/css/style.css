@@ -104,6 +104,19 @@ header {
     display: flex;
 }
 
+.carousel {
+    height: 100vh;
+    height: 100dvh;
+}
+.carousel-item {
+    place-content: center;
+    justify-content: center;
+}
+.carousel img {
+    max-height: 100vh;
+    max-height: 100dvh;
+}
+
 footer {
     display: grid;
 
