@@ -7,7 +7,7 @@ html {
 /* Color theme */
 :root,
     /* Default dark, therefore this should place first */
-    html[data-user-theme='dark'] {
+    html[data-theme="dark"] {
         --g1-color: #1D26714C;
         --g2-color: #C337634C;
         --bg-color: #222222;
@@ -20,7 +20,7 @@ html {
         --thumb-hover-color: #EAE7E1;
     }
     
-    html[data-user-theme='light'] {
+    html[data-theme="light"] {
         --g1-color: #474b744c;
         --g2-color: #c07c924c;
         --bg-color: #FFFFFF;
@@ -59,7 +59,7 @@ html {
     place-items: center;
     transition: opacity 0.5s, visibility 1s;
     transition-timing-function: ease-in-out;
-    transition-delay: 0s;
+    transition-delay: 1s;
 
     background: #EAE7E1 url(../load.gif) no-repeat center center;
     background-size: 25%;
