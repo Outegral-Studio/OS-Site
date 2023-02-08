@@ -7,7 +7,7 @@ html {
 /* Color theme */
 :root,
     /* Default dark, therefore this should place first */
-    html[data-theme="dark"] {
+    html[data-user-theme='dark'] {
         --g1-color: #1D26714C;
         --g2-color: #C337634C;
         --bg-color: #222222;
@@ -20,13 +20,13 @@ html {
         --thumb-hover-color: #EAE7E1;
     }
     
-    html[data-theme="light"] {
+    html[data-user-theme='light'] {
         --g1-color: #474b744c;
         --g2-color: #c07c924c;
-        --bg-color: #FFFFFF;
-        --text-color: #111111;
-        --sel-text-color: #FFFFFF;
-        --sel-bg-color: #FFFFFF;
+        --bg-color: #EEEEEE;
+        --text-color: #222222;
+        --sel-text-color: #D8D5D0;
+        --sel-bg-color: #292E33;
         --navbar-color: #EEEEEE;
         --footer-color: #292E33;
         --thumb-color: #FFFFFF;
