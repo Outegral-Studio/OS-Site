@@ -6,10 +6,11 @@ html {
 
 /* Color theme */
 :root,
-    html[data-theme='dark'] {
+    /* Default dark, therefore this should place first */
+    html[data-user-theme='dark'] {
         --g1-color: #1D26714C;
         --g2-color: #C337634C;
-        --bg-color: #0D1117;
+        --bg-color: #222222;
         --text-color: #EEEEEE;
         --sel-text-color: #292E33;
         --sel-bg-color: #D8D5D0;
@@ -19,7 +20,7 @@ html {
         --thumb-hover-color: #EAE7E1;
     }
     
-    html[data-theme='light'] {
+    html[data-user-theme='light'] {
         --g1-color: #474b744c;
         --g2-color: #c07c924c;
         --bg-color: #FFFFFF;
@@ -48,12 +49,28 @@ html {
     transition-duration: 0.15s;
 }
 
+/* Pre-loader */
+.loader {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+
+    display: grid;
+    place-items: center;
+    transition: opacity 0.5s, visibility 1s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+
+    background: #EAE7E1 url(../load.gif) no-repeat center center;
+    background-size: 25%;
+}
+
 body {
     background-color: var(--bg-color);
     overflow: overlay;
 }
 
-.main-layout {
+.layout-main {
     min-height: 100vh;
     min-height: 100dvh;
 
@@ -91,6 +108,9 @@ footer {
     display: grid;
 
     background-color: var(--footer-color);
+
+    -webkit-box-shadow: 0em 0em 2em 1em #0000004C;
+    box-shadow: 0em 0em 2em 1em #0000004C;
 }
 
 /* -------------------------- CUSTOM -------------------------- */
@@ -198,21 +218,6 @@ body::-webkit-scrollbar-corner {
 ::selection {
     color: var(--sel-text-color);
     background: var(--sel-bg-color);
-}
-
-
-/* Pre-loader */
-.loader {
-    position: fixed;
-    inset: 0;
-    z-index: 10000;
-
-    display: grid;
-    place-items: center;
-    transition: opacity 0.5s, visibility 1s;
-
-    background: #EAE7E1 url(../load.gif) no-repeat center center;
-    background-size: 25%;
 }
 
 .fade {
