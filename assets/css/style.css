@@ -49,22 +49,6 @@ html {
     transition-duration: 0.15s;
 }
 
-/* Pre-loader */
-.loader {
-    position: fixed;
-    inset: 0;
-    z-index: 10000;
-
-    display: grid;
-    place-items: center;
-    transition: opacity 0.5s, visibility 1s;
-    transition-timing-function: ease-in-out;
-    transition-delay: 1s;
-
-    background: #EAE7E1 url(../load.gif) no-repeat center center;
-    background-size: 25%;
-}
-
 body {
     background-color: var(--bg-color);
     overflow: overlay;
@@ -81,40 +65,33 @@ body {
         auto;
 }
 
-header {
+.primary-header {
     height: 100vh;
     height: 100dvh;
     width: 100%;
 
     display: grid;
     overflow: hidden;
+    place-items: center;
     place-content: center;
     justify-content: center;
+    grid-template-areas: "stack";
 
     background: var(--bg-color);
-    background: -webkit-linear-gradient(var(--g1-color), var(--g2-color)), url(../gallery/HCTS_20191214.jpg) no-repeat top center;
-    background: linear-gradient(var(--g1-color), var(--g2-color)), url(../gallery/HCTS_20191214.jpg) no-repeat top center;
     background-size: cover;
 
     -webkit-box-shadow: 0em 0em 2em 1em #0000004C;
     box-shadow: 0em 0em 2em 1em #0000004C;
 }
 
-.menu {
-    display: flex;
+.primary-header > * {
+    grid-area: stack;
 }
 
-.carousel {
-    height: 100vh;
-    height: 100dvh;
-}
-.carousel-item {
-    place-content: center;
-    justify-content: center;
-}
-.carousel img {
-    max-height: 100vh;
-    max-height: 100dvh;
+
+
+.menu {
+    display: flex;
 }
 
 footer {
@@ -126,8 +103,30 @@ footer {
     box-shadow: 0em 0em 2em 1em #0000004C;
 }
 
-/* -------------------------- CUSTOM -------------------------- */
+/* -------------------------- STYLES -------------------------- */
 
+/* Pre-loader */
+.loader {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+
+    display: grid;
+    place-items: center;
+    transition: opacity 0.5s, visibility 1s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 1s;
+
+    background: #EAE7E1 url(../load.gif) no-repeat center center;
+    background-size: 25%;
+}
+
+.fade {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Navigation Bar */
 .navbar {
     background-color: transparent;
     /* background-color: var(--navbar-color) !important; */
@@ -152,6 +151,12 @@ footer {
         text-decoration: none !important;
         border: none !important;
     }
+
+
+/* Text */
+.headings {
+    z-index: 1;
+}
 
 .heading {
     color: var(--text-color);
@@ -200,40 +205,8 @@ p {
     text-align: center;
 }
 
-/* -------------------------- PSEUDO -------------------------- */
-
-/* Scrollbar */
-body::-webkit-scrollbar {
-    width: 12px;
-    background: transparent;
-    overflow-y: hidden;
-}
-
-body::-webkit-scrollbar-thumb {
-    border: 4px solid transparent;
-    background: var(--thumb-color);
-    border-radius: 12px;
-    background-clip: content-box;
-}
-
-body::-webkit-scrollbar-thumb:hover {
-    border: 4px solid transparent;
-    background:  var(--thumb-hover-color);
-    border-radius: 12px;
-    background-clip: content-box;
-}
-
-body::-webkit-scrollbar-corner {
-    border-radius: 12px;
-}
-
 /* Selection */
 ::selection {
     color: var(--sel-text-color);
     background: var(--sel-bg-color);
-}
-
-.fade {
-    opacity: 0;
-    visibility: hidden;
 }

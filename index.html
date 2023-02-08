@@ -15,6 +15,8 @@
 
         <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
         <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+        <link rel="stylesheet" href="./assets/css/carousel.css" type="text/css">
+        <link rel="stylesheet" href="./assets/css/scrollbar.css" type="text/css">
     </head>
 
     <!-- BODY -->
@@ -25,43 +27,51 @@
 
         <!-- <div class="loader"></div> -->
 
-        <!-- -->
-        <div id="carouselHeader" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active d-flex">
-                    <img src="./assets/gallery/HCTS_20191214.jpg" class="d-block" alt="test">
-                </div>
+        <!-- Navigator -->
+        <nav class="navbar navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="50">
+            <div class="container-fluid d-flex">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./assets/favicon.svg" class="d-inline-block" alt="icon">
+                    <!-- TBF: Align text center...? -->
+                    
+                </a>
+
+                <button type="button" class="btn btn-toggle" onclick="toggleTheme()">
+                    <span class="material-icons align-middle">toggle_off</span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+        </nav>
 
         <!-- Main layout -->
         <div class="layout-main">
             <!-- Header -->
-            <header class="p-5">
-                <nav class="navbar navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="50">
-                    <div class="container-fluid d-flex">
-                        <a class="navbar-brand" href="./index.html">
-                            <img src="./assets/favicon.svg" class="d-inline-block" alt="icon">
-                            <!-- TBF: Align text center...? -->
-                            
-                        </a>
-
-                        <button type="button" class="btn btn-toggle" onclick="toggleTheme()">
-                            <span class="material-icons align-middle">toggle_off</span>
-                        </button>
-                    </div>
-                </nav>
+            <header class="container-fluid primary-header">
                 
-                <h1 class="heading text-uppercase">Outegral Studio</h1>
-                <span class="subheading mt-3">"Every outegral is infinity."</span>
+                <!-- Carousel -->
+                <div id="carouselHeader" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="d-flex justify-content-center">
+                                <img src="./assets/gallery/HCTS_20191214.jpg" class="d-block" alt="test">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="d-flex justify-content-center">
+                                <img src="./assets/gallery/NOTALIUMS.jpg" class="d-block" alt="test">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="d-flex justify-content-center">
+                                <img src="./assets/gallery/PC.jpg" class="d-block" alt="test">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Heading Text -->
+                <div class="col headings p-5">
+                    <h1 class="heading text-uppercase">Outegral Studio</h1>
+                    <span class="subheading mt-3">"Every outegral is infinity."</span>
+                </div>
             </header>
 
             <!-- Main -->
