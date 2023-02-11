@@ -19,7 +19,7 @@ detectColorScheme();
 
 // Pre-loader
 const fade = () => {
-    const wrapper = document.querySelector('.loader');
+    const wrapper = document.querySelector('.preloader');
     wrapper.classList.add('fade');
 }
 window.addEventListener('load', fade);

@@ -1,9 +1,9 @@
 /* Carousel */
 .carousel {
-    z-index: auto;
-    height: 100vh;
-    height: 100dvh;
-    width: 100vw;
+    --wk-carousel-filter: -webkit-linear-gradient(var(--g1-color), var(--g2-color));
+    --carousel-filter: linear-gradient(var(--g1-color), var(--g2-color));
+
+    overflow: hidden;
 }
 
 .carousel-item img {
@@ -12,14 +12,16 @@
     width: auto;
     object-fit: cover;
 }
+
 .carousel-item:before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
 
-    background: -webkit-linear-gradient(var(--g1-color), var(--g2-color));
-    background: linear-gradient(var(--g1-color), var(--g2-color));
+    pointer-events: none;
+    background: var(--wk-carousel-filter);
+    background: var(--carousel-filter);
 }
