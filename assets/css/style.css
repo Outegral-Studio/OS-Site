@@ -138,7 +138,6 @@ footer {
     font-family: 'Unbounded';
     font-weight: 700;
     font-size: 3rem;
-    text-shadow: 0.1em 0.1em 0.3em var(--bg-color);
 
     line-height: 1.2em;
 }
@@ -148,7 +147,6 @@ footer {
     font-family: 'Unbounded';
     font-weight: 500;
     font-size: 1.2rem;
-    text-shadow: 0.1em 0.1em 0.3em var(--bg-color);
 }
 
 .title {
@@ -180,10 +178,14 @@ p {
     text-align: center;
 }
 
-/* Drop shadow */
+/* Shadows */
 .drop-shadow {
-    -webkit-box-shadow: 0em 0em 2em 1em var(--shadow-color);
-    box-shadow: 0em 0em 2em 1em var(--shadow-color);
+    -webkit-box-shadow: 0rem 0rem 4rem -1rem var(--shadow-color);
+    box-shadow: 0rem 0rem 4rem -1rem var(--shadow-color);
+}
+
+.text-shadow {
+    text-shadow: 0.1em 0.1em 0.3em var(--bg-color);
 }
 
 /* Disable transition */

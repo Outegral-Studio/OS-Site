@@ -17,12 +17,37 @@ const detectColorScheme = () => {
 }
 detectColorScheme();
 
+
+
 // Pre-loader
 const fade = () => {
     const wrapper = document.querySelector('.preloader');
     wrapper.classList.add('fade');
 }
 window.addEventListener('load', fade);
+
+
+
+// Navbar background color
+const getVH = () => {
+    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+    return vh;
+}
+window.onscroll = function(event) {
+    var navbar = document.getElementById('primary-navbar');
+    var scroll = window.scrollY;
+    var breakpoint = 0.4 * getVH();
+    if(scroll < breakpoint) {
+        navbar.style.backgroundColor = 'transparent';
+        navbar.classList.remove('drop-shadow');
+    }
+    else {
+        navbar.style.backgroundColor = 'var(--navbar-color)';
+        navbar.classList.add('drop-shadow');
+    }
+}
+
+
 
 // Button: Toggle color scheme
 const toggleTheme = () => {
