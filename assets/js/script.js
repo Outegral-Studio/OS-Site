@@ -58,3 +58,14 @@ const toggleTheme = () => {
     document.documentElement.setAttribute("data-user-theme", theme);
     localStorage.setItem("data-user-theme", theme);
 }
+
+
+
+// Twemoji
+const emo = () => {
+    twemoji.parse(document.body, {
+        folder: "svg", 
+        ext: ".svg"
+    });
+}
+window.addEventListener('load', emo);

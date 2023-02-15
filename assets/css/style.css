@@ -178,6 +178,13 @@ p {
     text-align: center;
 }
 
+img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+ }
+
 /* Shadows */
 .drop-shadow {
     -webkit-box-shadow: 0rem 0rem 4rem -1rem var(--shadow-color);
