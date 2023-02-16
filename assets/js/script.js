@@ -28,6 +28,17 @@ window.addEventListener('load', fade);
 
 
 
+// Twemoji
+const emo = () => {
+    twemoji.parse(document.body, {
+        folder: "svg", 
+        ext: ".svg"
+    });
+}
+window.addEventListener('load', emo);
+
+
+
 // Navbar background color
 const getVH = () => {
     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
@@ -58,14 +69,3 @@ const toggleTheme = () => {
     document.documentElement.setAttribute("data-user-theme", theme);
     localStorage.setItem("data-user-theme", theme);
 }
-
-
-
-// Twemoji
-const emo = () => {
-    twemoji.parse(document.body, {
-        folder: "svg", 
-        ext: ".svg"
-    });
-}
-window.addEventListener('load', emo);
