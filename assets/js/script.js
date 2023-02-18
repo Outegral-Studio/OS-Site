@@ -23,6 +23,7 @@ detectColorScheme();
 const fade = () => {
     const wrapper = document.querySelector('.preloader');
     wrapper.classList.add('fade');
+    document.body.classList.remove('unscrollable');
 }
 window.addEventListener('load', fade);
 
