@@ -7,7 +7,6 @@
 
 /* Color theme */
 :root {
-    --shadow-color: #1111118C;
     --color-cream: #fbf4e4;
     --color-black: #323232;
     --color-milky-deep-blue: #33333A;
@@ -24,6 +23,7 @@
         --sel-bg-color: var(--color-cream);
         --navbar-color: var(--color-milky-deep-blue);
         --footer-color: var(--color-black);
+        --shadow-color: #1111118C;
         --thumb-color: #D8D5D0;
         --thumb-hover-color: #EAE7E1;
     }
@@ -37,6 +37,7 @@
         --sel-bg-color: var(--color-black);
         --navbar-color: var(--color-cream);
         --footer-color: var(--color-black);
+        --shadow-color: var(--color-black);
         --thumb-color: #FFFFFF;
         --thumb-hover-color: #FFFFFF;
     }
@@ -187,8 +188,8 @@ img.emoji {
 
 /* Shadows */
 .drop-shadow {
-    -webkit-box-shadow: 0rem 0rem 4rem -1rem var(--shadow-color);
-    box-shadow: 0rem 0rem 4rem -1rem var(--shadow-color);
+    -webkit-box-shadow: 0rem 0rem 1rem -0.5rem var(--shadow-color);
+    box-shadow: 0rem 0rem 1rem -0.5rem var(--shadow-color);
 }
 
 .text-shadow {
