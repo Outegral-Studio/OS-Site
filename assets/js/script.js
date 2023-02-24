@@ -46,7 +46,7 @@ const getVH = () => {
     return vh;
 }
 window.onscroll = function(event) {
-    var navbar = document.getElementById('primary-navbar');
+    var navbar = document.getElementById('main-navbar');
     var scroll = window.scrollY;
     var breakpoint = 0.4 * getVH();
     if(scroll < breakpoint) {
