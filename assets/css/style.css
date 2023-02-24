@@ -43,7 +43,8 @@
     }
 
 body {
-    overflow: overlay;
+    overflow-x: hidden;
+    overflow-y: overlay;
     background-color: var(--bg-color);
 }
 
@@ -69,7 +70,7 @@ body {
 }
 
 .primary-header > * {
-    grid-area: stack;
+    grid-area: stack; 
 }
 
 .menu {
