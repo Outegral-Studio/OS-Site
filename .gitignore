@@ -1,2 +1,3 @@
 # Ignore icon SVGs
-materials/icon
+src/icon
+node_modules
