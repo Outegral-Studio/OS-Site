@@ -1,2 +1,5 @@
 # Ignore icon SVGs
-materials/icon
+assets/icon
+
+# Ignore locale (temp)
+assets/locale

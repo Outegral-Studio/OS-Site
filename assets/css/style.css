@@ -1,18 +1,23 @@
-/* -------------------------- LAYOUT -------------------------- */
+/* -------------------------- COMMON LAYOUT -------------------------- */
 
 /* Color theme */
 :root {
+    --main-min-width: 300px;
+    --main-max-width: 1200px;
     --article-min-width: 300px;
-    --article-max-width: 1200px;
+    --article-max-width: 900px;
     --layout-gap: 6rem;
-    --section-gap: 3rem;
+    --main-section-gap: 3rem;
+    --article-section-gap: 2.5rem;
     --trans-duration: 0.15s;
 
+    --color-orange: #EB8464;
+    --color-white: #ECECE8;
     --color-cream: #FBFBEF;
     --color-grey: #9C9C9E;
     --color-black: #323232;
     --color-footer: #202123;
-    --color-milky-deep-blue: #343541;
+    --color-deep-blue: #2A2A33;
 }
 
 :root,
@@ -20,11 +25,15 @@
     html[data-user-theme='dark'] {
         --g1-color: #1D26714C;
         --g2-color: #C337634C;
-        --bg-color: var(--color-milky-deep-blue);
+        --n1-shadow-color: #24242B;
+        --n2-shadow-color: #30303B;
+
+        --bg-color: var(--color-deep-blue);
         --text-color: var(--color-cream);
-        --sel-text-color: var(--color-milky-deep-blue);
+        --highlight-color: var(--color-orange);
+        --sel-text-color: var(--color-deep-blue);
         --sel-bg-color: var(--color-cream);
-        --navbar-color: var(--color-milky-deep-blue);
+        --navbar-color: var(--color-deep-blue);
         --footer-color: var(--color-footer);
         --shadow-color: #1111118C;
         --thumb-color: var(--color-grey);
@@ -34,32 +43,35 @@
     html[data-user-theme='light'] {
         --g1-color: #FBF4E47C;
         --g2-color: #BB909E7C;
-        --bg-color: var(--color-cream);
+        --n1-shadow-color: #C9C9C5;
+        --n2-shadow-color: #FFFFFF;
+
+        --bg-color: var(--color-white);
         --text-color: var(--color-black);
-        --sel-text-color: var(--color-cream);
+        --highlight-color: var(--color-orange);
+        --sel-text-color: var(--color-white);
         --sel-bg-color: var(--color-black);
-        --navbar-color: var(--color-cream);
+        --navbar-color: var(--color-white);
         --footer-color: var(--color-footer);
         --shadow-color: var(--color-black);
         --thumb-color: var(--color-grey);
         --thumb-hover-color: var(--color-black);
     }
 
-/* Main Structure */
 body {
     overflow-x: hidden;
     overflow-y: overlay;
-
-    font-family: 'Poppins', 'Noto Sans TC', sans-serif;
-    color: var(--text-color);
     background-color: var(--bg-color);
 }
 
 .main-layout {
     min-height: 100vh;
     min-height: 100dvh;
+    margin: auto;
 
     display: grid;
+    /* DO NOT DELETE: AFFECTS FOOTER */
+    place-items: center;
     grid-template-rows: 
         auto
         1fr
@@ -67,27 +79,21 @@ body {
     row-gap: var(--layout-gap);
 }
 
-.main-header {
-    display: grid;
-    overflow: hidden;
-    place-items: center;
-    place-content: center;
-    grid-template-areas: "stack";
-    background: var(--bg-color);
-    background-size: cover;
-}
-.main-header > * {
-    grid-area: stack; 
-}
-
 .main-footer {
-    height: 10rem;
+    /* TBF: Width @ very short screen width */
+    width: calc(100% - 150px);
+    min-width: var(--article-min-width);
+    max-width: 100%;
+    height: auto;
 
     display: grid;
+    place-items: center;
     background-color: var(--footer-color);
+    border-radius: 1rem 1rem 0 0;
 }
 
-/* Element Structures */
+/* -------------------------- COMMON STRUCT -------------------------- */
+
 .brand-img {
     --img-radius: 1rem;
     height: calc(var(--img-radius) * 2);
@@ -98,48 +104,67 @@ body {
     display: flex;
 }
 
-.studio {
-    z-index: 1;
-    pointer-events: none;
+.article-info {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.author {
+    display: grid;
+    place-items: left;
+    place-content: center;
+}
+.author-img {
+    --img-radius: 1rem;
+
+    width: auto;
+    height: calc(var(--img-radius) * 2);
+    border-radius: var(--img-radius);
 }
 
-.main-article {
+/* Cards */
+.card-list {
+    width: 100%;
     display: grid;
-    row-gap: var(--section-gap);
+    place-content: stretch;
+
+    row-gap: 3rem;
+    column-gap: 3rem;
 }
-
-.main-article section {
-    min-width: var(--article-min-width);
-    max-width: var(--article-max-width);
-    margin: auto;
-
-    display: grid;
+.card-list > * {
+    border-radius: 2rem;
+}
+.card {
+    width: 100%;
+    display: flex !important;
     place-items: center;
-    row-gap: var(--section-gap);
-    column-gap: var(--section-gap);
-}
-.main-article section::after {
-    content: '．．．';
-    color: var(--text-color);
+    padding: 1.5rem;
 
-    display: grid;
-    align-self: center;
+    row-gap: 0.5rem;
+    background-color: var(--bg-color);
+    border: none !important;
+    text-decoration: none;
+}
+.card-title {
+    color: var(--highlight-color);
+    font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+}
+.card-title-sm {
+    color: var(--text-color);
+    font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 @media screen and (min-width: 1200px) {
-    .main-article section {
-        grid-template-columns: 1fr 2fr;
-        grid-template-areas:"_h2 _p"
-                            "_sec_after _sec_after";
-        row-gap: none;
-    }
-    .main-article section h2 {
-        grid-area: _h2;
-    }
-    .main-article section p {
-        grid-area: _p;
-    }
-    .main-article section::after {
-        grid-area: _sec_after;
+    .card-list {
+        display: flex;
+        place-content: space-between;
     }
 }
 
@@ -222,13 +247,6 @@ br {
     content: "";
     display: block;
     margin-top: 1.2rem;
-}
-
-.footer-item {
-    text-align: center;
-    color: var(--color-cream);
-    font-weight: 400;
-    font-size: 1rem;
 }
 
 @media screen and (max-width: 1200px) {
@@ -319,8 +337,19 @@ img.emoji {
     box-shadow: 0rem 0rem 1rem -0.5rem var(--shadow-color);
 }
 
+.neumorphism {
+    /* background: var(--bg-color); */
+    /* border-radius: 25px; */
+    box-shadow: 1rem 1rem 2rem var(--n1-shadow-color),
+                -1rem -1rem 2rem var(--n2-shadow-color);
+}
+
 .text-shadow {
     text-shadow: 0.1em 0.1em 0.3em var(--bg-color);
+}
+
+.border {
+    border: var(--text-color) 3px solid !important;
 }
 
 .transition {

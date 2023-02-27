@@ -1,0 +1,158 @@
+/* -------------------------- LAYOUT -------------------------- */
+
+/* Main Structure */
+body {
+    font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+    color: var(--text-color);
+}
+
+.main-header {
+    display: grid;
+    overflow: hidden;
+    place-items: center;
+    place-content: center;
+    grid-template-areas: "stack";
+    background: var(--bg-color);
+    background-size: cover;
+}
+.main-header > * {
+    grid-area: stack; 
+}
+
+/* -------------------------- STRUCT -------------------------- */
+
+.studio {
+    z-index: 1;
+    pointer-events: none;
+}
+
+.introduction {
+    display: grid;
+    row-gap: var(--main-section-gap);
+}
+
+.introduction section {
+    min-width: var(--main-min-width);
+    max-width: var(--main-max-width);
+    width: 100%;
+    margin: auto;
+
+    display: grid;
+    place-items: center;
+    row-gap: var(--main-section-gap);
+    column-gap: var(--main-section-gap);
+}
+.introduction section::after {
+    content: '．．．';
+    color: var(--text-color);
+
+    display: grid;
+    align-self: center;
+}
+@media screen and (min-width: 1200px) {
+    .introduction section {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:"_h2 _p"
+                            "_sec_after _sec_after";
+        row-gap: none;
+    }
+    .introduction section h2 {
+        grid-area: _h2;
+    }
+    .introduction section p {
+        grid-area: _p;
+    }
+    .introduction section::after {
+        grid-area: _sec_after;
+    }
+}
+
+/* -------------------------- STYLES -------------------------- */
+
+/* Button with SVGs */
+.btn-svg {
+    display: flex;
+    border: none !important;
+    align-items: center;
+    justify-self: end;
+    padding-left: 0.4rem !important;
+    padding-right: 0.4rem !important;
+}
+.btn-svg svg {
+    fill: var(--text-color) !important;
+    height: 1.5rem;
+    width: auto;
+}
+
+
+/* Text */
+.heading {
+    font-family: 'Unbounded';
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 1.2em;
+    letter-spacing: 0.1rem;
+}
+
+.subheading {
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+}
+
+.title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-decoration-line: underline;
+    text-underline-offset: 0.3em;
+    text-decoration-color: var(--text-color);
+    line-height: 2em;
+}
+
+.blockquote {
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+p {
+    text-align: justify;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+br {
+    content: "";
+    display: block;
+    margin-top: 1.2rem;
+}
+
+.footer-item {
+    text-align: center;
+    color: var(--color-cream);
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .heading {
+        font-size: 3rem;
+    }
+    .subheading {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .heading {
+        font-size: 2.5rem;
+    }
+    .subheading {
+        font-size: 1rem;
+    }
+    .title {
+        font-size: 2rem;
+    }
+}

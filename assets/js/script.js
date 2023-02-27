@@ -48,14 +48,15 @@ const getVH = () => {
 window.onscroll = function(event) {
     var navbar = document.getElementById('main-navbar');
     var scroll = window.scrollY;
-    var breakpoint = 0.4 * getVH();
+    // L: 0.4, S: 0.05
+    var breakpoint = 0.05 * getVH();
     if(scroll < breakpoint) {
         navbar.style.backgroundColor = 'transparent';
-        navbar.classList.remove('drop-shadow');
+        navbar.classList.remove('neumorphism');
     }
     else {
         navbar.style.backgroundColor = 'var(--navbar-color)';
-        navbar.classList.add('drop-shadow');
+        navbar.classList.add('neumorphism');
     }
 }
 
