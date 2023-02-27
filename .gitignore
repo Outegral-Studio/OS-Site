@@ -3,3 +3,6 @@ assets/icon
 
 # Ignore locale (temp)
 assets/locale
+
+# Ignore original paragraphs
+materials/
