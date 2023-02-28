@@ -49,6 +49,15 @@ body {
     display: grid;
     align-self: center;
 }
+
+.temp-img {
+    --img-radius: 1rem;
+
+    width: auto;
+    height: calc(var(--img-radius) * 2);
+    border-radius: var(--img-radius);
+}
+
 @media screen and (min-width: 1200px) {
     .introduction section {
         grid-template-columns: 1fr 2fr;
@@ -127,13 +136,6 @@ br {
     content: "";
     display: block;
     margin-top: 1.2rem;
-}
-
-.footer-item {
-    text-align: center;
-    color: var(--color-cream);
-    font-weight: 400;
-    font-size: 1rem;
 }
 
 @media screen and (max-width: 1200px) {

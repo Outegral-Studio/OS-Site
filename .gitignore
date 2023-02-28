@@ -6,3 +6,6 @@ assets/locale
 
 # Ignore original paragraphs
 materials/
+
+# Ignore worklist
+todo.md

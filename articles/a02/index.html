@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <!-- HEAD -->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>【2022 新竹 X 梅竹黑客松】循環動畫開發紀錄</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+        <link rel="icon" href="../../assets/favicon.jpg" type="image/svg+xml">
+        <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+        <link rel="stylesheet" href="../../assets/css/article.css" type="text/css">
+    </head>
+
+    <!-- BODY -->
+    <body class="transition">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+        <script src="../../assets/js/script.js"></script>
+
+        <!-- Navigator -->
+        <nav id="main-navbar" class="navbar navbar-expand-lg fixed-top transition" data-spy="affix">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../../">
+                    <img src="../../assets/favicon.svg" class="brand-img" alt="icon">
+                </a>
+                <nav class="nav">
+                    <!-- <li class="nav-item justify-content-center">
+                        <a class="nav-link" aria-current="page" href="#"></a>
+                    </li> -->
+                </nav>
+                <button type="button" class="btn btn-svg" onclick="toggleTheme()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zM7 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main layout -->
+        <div class="main-layout">
+            <!-- Header -->
+            <header class="main-header container-fluid px-4">
+                <div class="article-info">
+                    <img src="../../assets/author/ritmo.webp" class="author-img" alt="Author Icon" />
+                    <div class="author ms-3">
+                        <span class="title-sm">里莫</span>
+                        <span class="title-sm" style="color: var(--color-grey) !important">Mar 1, 2023</span>
+                    </div>
+                </div>
+                <div class="tool">
+                    <button type="button" class="btn btn-svg" alt="Save to Bookmark">
+                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><rect fill="none" height="24" width="24"/><path d="M21,7h-2v2h-2V7h-2V5h2V3h2v2h2V7z M19,21l-7-3l-7,3V5c0-1.1,0.9-2,2-2l7,0c-0.63,0.84-1,1.87-1,3c0,2.76,2.24,5,5,5 c0.34,0,0.68-0.03,1-0.1V21z"/></svg>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Main -->
+            <main class="container-fluid px-4">
+                <!-- Main Article -->
+                <article class="main-article">
+                    <div class="headings">
+                        <h1 class="heading">【2022 新竹 X 梅竹黑客松】循環動畫開發紀錄</h1>
+                        <span class="subheading" style="color: var(--color-grey) !important">部長，你的網格為什麼是斜的？</span>
+                    </div>
+
+                    <section>
+                        <p>
+                            　　2022 年是我第二年參加梅竹黑客松，也是我認為自己有所突破的一年。<br>
+                            　　正逢梅竹黑客松邁入十週年，開發部 (主要負責開發網頁以及 bot) 決定搞點大的，除了每年會有得主網站之外多架設十週年紀念網站。聽到這個消息，我心想設計部 (主要負責各式文宣配圖海報) 當然也不能輸，於是就有了開場動畫與循環動畫，而後者正是此文要關注的對象。<br>
+                            　　循環動畫的製作期間涵蓋了活動籌備的末期，最後一路 debug 到活動當天早上才搞定；當中學到了不少實用的技術，因此留下這份紀錄分享給螢幕前的各位。
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="title">前情提要</h2><br>
+                        <p>
+                            　　循環動畫其實就是「讓主視覺動起來」。大約在五月，設計部部內會讓所有部員自己發想並設計主視覺，最後投票表決 (順帶一提，我沒有製作，因為我忘記了。再去年是睡死了)。<br>
+                            　　當時的主視覺由部長製作的當選，長這樣：<br>
+                        </p>
+                        <img src="./img/01.webp" alt="Key visual" /><br>
+                        <p>
+                            　　雖然乍看下整個畫面東西很多，但有了部長的 .ai 檔，只要拆分成許多單一元素來看就沒那麼困難了。上個禮拜在看
+                            <span class="hover-img" title="你知道的太多了">
+                                <a href="https://youtu.be/6TYkDy54q4E?t=0m21s">某個 Youtube 影片</a>
+                            </span>
+                            學網頁前端時，有一句話我很喜歡：<br>
+                            <span class="blockquote my-5">
+                                <em>The one thing that has helped me in the past to get through big anxieties is to break them down into tiny anxieties, and then squash them one at a time.</em>
+                            </span>
+                            　　我的製作過程也是相同的道理。整個畫面有前景有背景，背景有什麼？一個網格房間，其中一面有螢幕。那前景又有什麼？有很多不同的小物件。這個空間是 3D，而這些小物件平行於不同的面。這三個敘述裡，又可以再拆分成更細的部分；接下來的內容也會大致按照這個順序。
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="title">#01　部長，你的網格為什麼是斜的？</h2><br>
+                        <p>
+                            　　前面提到部長的 .ai 檔，後來被很多部員在很多地方使用。而其中最令人在意的部分，是背景的網格。<br>
+                            　　由於該網格是部長在 Illustrator 中隨便拉的，乍看下對稱實際上沒有，甚至連各個面的邊線都沒有對齊，著實令人頭疼。本以為只有我這麼想，沒想到活動前一天彩排時其他部員看到舞台背板的時候紛紛指認罪行。
+                            <span class="spoiler-tag transition" title="你知道的太多了">(：你是不是忘了前代部長的教誨)</span> <br>
+                        </p>
+                        <p>
+                            　　回到正題，說到網格，在 After Effects 中第一個想到的就是 <b>Grid 特效</b>了。因此我首先在 Composition (合成) 中新增一個 Solid (實色)，再到特效欄中按下<b>右鍵 > Generate > Grid：</b><br>
+                        </p>
+                        <img src="./img/02.webp" alt="Grid effect" /><br>
+                        <p>
+                            　　初始的數字會是藍色的，至於為什麼圖片裡的是紅色，我先賣個關子，晚點會提到。<br>
+                        </p>
+                    </section>
+
+                </article>
+            </main>
+
+            <!-- Footer -->
+            <footer class="main-footer text-center neumorphism-inset">
+                <div class="container p-4">
+                    <!-- Section: Links -->
+                    <section class="">
+                        <!-- Grid row -->
+                        <div class="row">
+                            <!-- Grid col -->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                                <ul class="list-unstyled mb-1">
+                                    <li>
+                                        <a href="https://www.youtube.com/@outegralstudio" class="footer-item">YouTube</a>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                            <!-- Grid col -->
+                        </div>
+                        <!-- Grid row -->
+
+                        <!-- Grid row -->
+                        <div class="row">
+                            <div class="footer-item">© 2023 Outegral Studio</div>
+                        </div>
+                        <!-- Grid row -->
+                    </section>
+                    <!-- Section: Links -->
+                </div>
+            </footer>
+        </div>
+    </body>
+
+</html>

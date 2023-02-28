@@ -18,6 +18,10 @@ html {
     place-content: center;
     margin-top: 6rem;
 }
+main {
+    display: grid;
+    place-items: center;
+}
 .tool {
     display: flex;
     align-items: center;
@@ -54,11 +58,39 @@ html {
     justify-self: left;
 }
 
+.article-info {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.author {
+    display: grid;
+    place-items: left;
+    place-content: center;
+}
+.author-img {
+    --img-radius: 1rem;
+
+    width: auto;
+    height: calc(var(--img-radius) * 2);
+    border-radius: var(--img-radius);
+}
+
 .main-article {
     display: grid;
     row-gap: var(--article-section-gap);
 }
-.main-article section::after {
+.main-article iframe {
+    width: 100%;
+    height: auto;
+}
+.main-article img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    
+}
+.main-article > *:not(:first-child, :last-child):after {
     display: flex;
     place-content: center;
     margin-top: var(--article-section-gap);
@@ -66,15 +98,8 @@ html {
     content: '．．．';
     color: var(--text-color);
 }
-.main-article img {
+.main-article > * {
     width: 100%;
-    justify-self: center;
-    object-fit: contain;
-    pointer-events: none;
-}
-.main-article iframe {
-    width: 100%;
-    height: auto;
 }
 
 /* -------------------------- STYLES -------------------------- */
@@ -112,7 +137,7 @@ html {
     color: var(--text-color);
     font-family: 'Poppins', 'Noto Sans TC', sans-serif;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .title-sp {
@@ -152,10 +177,6 @@ html {
     font-size: 1rem;
 }
 
-.text-italic {
-    font-style: italic;
-}
-
 p {
     color: var(--text-color);
     font-family: 'Poppins', 'Noto Sans TC', sans-serif;
@@ -163,7 +184,7 @@ p {
     font-size: 1rem;
 
     text-align: justify;
-    line-height: 1.5rem;
+    line-height: 2rem;
 }
 br {
     display: block;
