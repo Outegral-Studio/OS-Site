@@ -112,7 +112,7 @@ main {
     width: 100%;
     height: auto;
 }
-.main-article img {
+.main-article img:not(.emoji) {
     max-width: 100%;
     display: block;
     margin: 0 auto;
@@ -187,15 +187,19 @@ br {
     text-align: center;
 }
 .blockquote {
+    display: grid;
+    grid-template-columns: 3em 1fr;
     position: relative;
-    padding: 1em 2em 1em 3em;
+    justify-items: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 2em;
     background-color: rgb(255, 137, 102, 0.15);
     border-radius: 0.2em;
 }
-.blockquote::before {
-    content: '💡';
-    position: absolute;
-    left: 1em;
+.blockquote :is(:first-child) {
+    background: none;
+    align-self: top;
 }
 
 .text-bold {
