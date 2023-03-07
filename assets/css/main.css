@@ -6,6 +6,10 @@ body {
     color: var(--text-color);
 }
 
+.main-layout {
+    row-gap: var(--gap-8);
+}
+
 .main-header {
     display: grid;
     overflow: hidden;
@@ -28,7 +32,7 @@ body {
 
 .introduction {
     display: grid;
-    row-gap: var(--main-section-gap);
+    row-gap: var(--gap-6);
 }
 
 .introduction section {
@@ -39,8 +43,8 @@ body {
 
     display: grid;
     place-items: center;
-    row-gap: var(--main-section-gap);
-    column-gap: var(--main-section-gap);
+    row-gap: var(--gap-6);
+    column-gap: var(--gap-6);
 }
 .introduction section::after {
     content: '．．．';
@@ -77,22 +81,6 @@ body {
 }
 
 /* -------------------------- STYLES -------------------------- */
-
-/* Button with SVGs */
-.btn-svg {
-    display: flex;
-    border: none !important;
-    align-items: center;
-    justify-self: end;
-    padding-left: 0.4rem !important;
-    padding-right: 0.4rem !important;
-}
-.btn-svg svg {
-    fill: var(--text-color) !important;
-    height: 1.5rem;
-    width: auto;
-}
-
 
 /* Text */
 .heading {

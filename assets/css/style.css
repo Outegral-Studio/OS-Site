@@ -1,17 +1,25 @@
 /* -------------------------- COMMON LAYOUT -------------------------- */
 
+html {
+    font-size: 16px;
+}
+
 /* Color theme */
 :root {
     --main-min-width: 300px;
     --main-max-width: 1200px;
     --article-min-width: 300px;
     --article-max-width: 900px;
-    --layout-gap: 6rem;
-    --main-section-gap: 3rem;
-    --article-section-gap: 2.5rem;
+    --gap-8: 6rem;
+    --gap-6: 3rem;
+    --gap-5: 2.5rem;
+    --gap-4: 2rem;
+    --gap-3: 1rem;
+    --gap-2: 0.5rem;
+    --gap-1: 0.25rem;
     --trans-duration: 0.15s;
 
-    --color-orange: #FF8966;    /* Coral */
+    --color-orange: rgb(255, 137, 102);     /* Coral; #FF8966 */
     --color-white: #F9F8F8;     /* Seasalt */
     --color-grey: #9A9AAC;      /* Cool Grey *//* 797B84 */
     --color-deep-blue: #2A2A33; /* Raisin Black */
@@ -74,7 +82,6 @@ body {
         auto
         1fr
         auto;
-    row-gap: var(--layout-gap);
 }
 
 .main-footer {
@@ -173,64 +180,38 @@ body {
     visibility: hidden;
 }
 
-/* Button with SVGs */
+/* Buttons */
 .btn-svg {
+    --content-height: 1.5em;
+
     display: flex;
-    border: none !important;
+    border: none;
     align-items: center;
     justify-self: end;
-    padding-left: 0.4rem !important;
-    padding-right: 0.4rem !important;
+    padding: auto 0.4em;
 }
 .btn-svg svg {
-    fill: var(--text-color) !important;
-    height: 1.5rem;
+    fill: var(--text-color);
+    height: var(--content-height);
     width: auto;
 }
+.fab {
+    /* TBD */
+}
 
+.border-stadium {
+    border: var(--color-grey) 2px solid;
+    border-radius: var(--content-height);
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+}
+.border-stadium svg {
+    fill: var(--color-grey);
+}
 
 /* Text */
-.heading {
-    font-family: 'Unbounded';
-    font-weight: 700;
-    font-size: 4rem;
-    line-height: 1.2em;
-    letter-spacing: 0.1rem;
-}
-
-.subheading {
-    font-weight: 500;
-    font-size: 1.5rem;
-    letter-spacing: 0.1rem;
-}
-
-.title {
-    text-align: center;
-    font-weight: 700;
-    font-size: 2.5rem;
-    text-decoration-line: underline;
-    text-underline-offset: 0.3em;
-    text-decoration-color: var(--text-color);
-    line-height: 2em;
-}
-
-.blockquote {
-    display: block;
-    text-align: center;
-    font-style: italic;
-    font-size: 1.5rem;
-}
-
-p {
-    text-align: justify;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 2rem;
-}
-br {
-    content: "";
-    display: block;
-    margin-top: 1.2rem;
+.text-grey {
+    color: var(--color-grey);
 }
 
 .footer-item {

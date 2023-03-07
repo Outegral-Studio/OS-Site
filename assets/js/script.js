@@ -71,3 +71,10 @@ const toggleTheme = () => {
     document.documentElement.setAttribute("data-user-theme", theme);
     localStorage.setItem("data-user-theme", theme);
 }
+
+
+
+// Button: Share
+const share = () => {
+    // TBD
+}
