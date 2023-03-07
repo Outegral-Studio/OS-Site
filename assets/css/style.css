@@ -10,6 +10,7 @@ html {
     --main-max-width: 1200px;
     --article-min-width: 300px;
     --article-max-width: 900px;
+    --article-line-height: 2em;
     --gap-8: 6rem;
     --gap-6: 3rem;
     --gap-5: 2.5rem;

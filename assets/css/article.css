@@ -106,7 +106,7 @@ main {
     row-gap: var(--gap-6);
 
     text-align: justify;
-    line-height: 2em;
+    line-height: var(--article-line-height);
 }
 .main-article iframe {
     width: 100%;
@@ -148,8 +148,12 @@ main {
 }
 
 .title-sp {
+    display: flex;
     position: relative;
+    place-items: center;
+
     font-size: 1em;
+    line-height: var(--article-line-height);
 }
 .title-sp::before {
     content: '';
@@ -191,7 +195,7 @@ br {
 .blockquote::before {
     content: '💡';
     position: absolute;
-    left: 1.05em;
+    left: 1em;
 }
 
 .text-bold {
