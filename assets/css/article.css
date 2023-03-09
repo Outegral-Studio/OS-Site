@@ -3,7 +3,7 @@
 /* Add width restriction to main layout */
 .main-layout {
     color: var(--text-color);
-    font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+    font-family: 'Poppins', '煮豆黑體', sans-serif;
     font-weight: 400;
     font-size: 1.25rem !important;
 
