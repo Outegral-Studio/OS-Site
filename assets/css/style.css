@@ -2,6 +2,7 @@
 
 html {
     font-size: 16px;
+
 }
 
 /* Color theme */
@@ -20,7 +21,7 @@ html {
     --gap-1: 0.25rem;
     --trans-duration: 0.15s;
 
-    --color-orange: rgb(255, 137, 102);     /* Coral; #FF8966 */
+    --color-orange: #FF8966;    /* Coral; rgb(255, 137, 102) */
     --color-white: #F9F8F8;     /* Seasalt */
     --color-grey: #9A9AAC;      /* Cool Grey *//* 797B84 */
     --color-deep-blue: #2A2A33; /* Raisin Black */
@@ -69,6 +70,7 @@ body {
     overflow-x: hidden;
     overflow-y: overlay;
     background-color: var(--bg-color);
+    scroll-behavior: smooth;
 }
 
 .main-layout {
@@ -164,16 +166,20 @@ body {
 
 /* Pre-loader */
 .preloader {
+    display: grid;
     position: fixed;
     inset: 0;
     z-index: 10000;
+    place-content: center;
 
-    display: grid;
-    background: var(--color-deep-blue) url(../load.gif) no-repeat center center;
-    background-size: 256px;
-
-    transition: opacity 0.5s, visibility 1s;
+    background-color: var(--bg-color);
+    transition: opacity 0.3s, visibility 1s;
     transition-timing-function: ease-in-out;
+}
+.preloader img {
+    height: 256px;
+    width: auto;
+    pointer-events: none;
 }
 
 .fade {

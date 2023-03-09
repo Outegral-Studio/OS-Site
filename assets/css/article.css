@@ -135,6 +135,7 @@ main {
     color: var(--text-color);
     font-weight: 700;
     font-size: 1.8em;
+    line-height: 1.2em;
 }
 .subheading {
     color: var(--color-grey);
