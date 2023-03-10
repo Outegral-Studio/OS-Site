@@ -1,25 +1,3 @@
-// Navbar background color
-const getVH = () => {
-    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-    return vh;
-}
-window.onscroll = function(event) {
-    var navbar = document.getElementById('main-navbar');
-    var scroll = window.scrollY;
-    // L: 0.4, S: 0.05
-    var breakpoint = 0.05 * getVH();
-    if(scroll < breakpoint) {
-        navbar.style.backgroundColor = 'transparent';
-        navbar.classList.remove('neumorphism');
-    }
-    else {
-        navbar.style.backgroundColor = 'var(--navbar-color)';
-        navbar.classList.add('neumorphism');
-    }
-}
-
-
-
 // Twemoji
 const emo = () => {
     twemoji.parse(document.body, {
@@ -46,4 +24,11 @@ const toggleTheme = () => {
 // Button: Share
 const share = () => {
     // TBD
+}
+
+
+
+// Button: Back to top
+const toTop = () => {
+    document.documentElement.scrollTop = 0;
 }

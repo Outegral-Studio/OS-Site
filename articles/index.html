@@ -18,7 +18,7 @@
         <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
         <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
         <link rel="stylesheet" href="../assets/css/article.css" type="text/css">
-        <script src="../../assets/js/preload.js"></script>
+        <script src="../assets/js/preload.js"></script>
     </head>
 
     <!-- BODY -->
@@ -31,18 +31,26 @@
         <div class="preloader"></div>
 
         <!-- Navigator -->
-        <nav id="main-navbar" class="navbar navbar-expand-lg fixed-top transition" data-spy="affix">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="../">
-                    <img src="../assets/favicon.svg" class="brand-img" alt="icon">
-                </a>
-                <nav class="nav">
-                    <!-- <li class="nav-item justify-content-center">
-                        <a class="nav-link" aria-current="page" href="#"></a>
-                    </li> -->
-                </nav>
-                <button type="button" class="btn btn-svg" onclick="toggleTheme()">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zM7 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+        <nav id="main-navbar" class="navbar navbar-expand-sm fixed-top" data-spy="affix">
+            <a class="navbar-brand" href="../../">
+                <img src="../../assets/favicon.svg" class="brand-img" alt="icon">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link footer-item" href="../">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link footer-item" href="./">文章</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tool">
+                <button type="button" class="btn btn-os" onclick="toggleTheme()">
+                    <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><rect fill="none" height="24" width="24"/><path d="M0 0h24v24H0z" fill="none"/><path d="M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zM7 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                </button>
+                <button type="button" class="btn btn-os navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><rect fill="none" height="24" width="24"/><path d="M0 0h24v24H0V0z" fill="none"/><path d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zM3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z"/></svg>
                 </button>
             </div>
         </nav>
@@ -107,6 +115,11 @@
                 </div>
             </footer>
         </div>
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+        <script src="../../assets/js/script.js"></script>
     </body>
 
 </html>

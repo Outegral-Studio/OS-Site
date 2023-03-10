@@ -27,27 +27,10 @@
     height: 1px;
     background-color: var(--color-grey);
 }
-.info-grid {
-    display: grid;
-    grid-template-rows: none;
-    grid-template-columns: 2fr 1fr;
-    place-items: center;
-    place-content: center;
-}
-.info-grid .article-info {
-    justify-self: start;
-    align-self: stretch;
-}
-.info-grid .tool {
-    justify-self: end;
-    align-self: stretch;
-}
-.headings {
-    justify-self: left;
-}
-.tool {
+.info-panel {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 main {
@@ -55,42 +38,64 @@ main {
     place-items: center;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 576px) {
     .main-layout {
         font-weight: 300 !important;
         font-size: 1rem !important;
     }
-    .info-grid {
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: none;        
-        place-content: start;
-        row-gap: 1em;
+    .info-panel {
+        flex-direction: column;
+        row-gap: var(--gap-3);
+        align-items: start;
     }
-    .info-grid > * {
-        justify-self: start !important;
+    #article-tool {
+        flex-direction: row-reverse;
     }
     .text-bold {
         font-weight: 500 !important;
     }
 }
+/* TODO: Fix social media button display problems */
+#article-tool .btn-outline {
+    --height: 1.5em;
+    --padding: 0.65em;
+    font-weight: 400;
+    font-size: calc(0.5 * var(--height));
+    padding-left: var(--padding);
+    padding-right: var(--padding);
+    column-gap: calc(0.5 * var(--padding));
+}
+#article-tool .btn-outline svg {
+    height: var(--height);
+}
+#article-tool a img {
+    height: 100%;
+    width: auto;
+}
 
 /* -------------------------- STRUCT -------------------------- */
 
+/* Article Info bar */
 .article-info {
     display: flex;
     align-items: center;
     text-decoration: none;
 }
-.article-info img {
+
+.author-img {
     --img-radius: 2.5rem;
     --width: 2px;
 
-    width: auto;
     height: var(--img-radius);
     border-radius: var(--img-radius);
-    outline: var(--color-grey) var(--width) solid;
     outline-offset: calc(1.5 * var(--width));
+    outline: var(--color-grey) var(--width) solid;
 }
+.author-img img {
+    height: inherit;
+    border-radius: var(--img-radius);
+}
+
 .author {
     display: grid;
     place-items: left;
@@ -101,6 +106,7 @@ main {
     font-size: 1rem;
 }
 
+/* Main Article */
 .main-article {
     display: grid;
     row-gap: var(--gap-6);
