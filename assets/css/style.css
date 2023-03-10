@@ -102,7 +102,6 @@ body {
 
 .tool {
     display: flex;
-    column-gap: var(--gap-3);
 }
 
 .main-footer {

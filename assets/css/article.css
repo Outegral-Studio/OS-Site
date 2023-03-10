@@ -56,6 +56,10 @@ main {
     }
 }
 /* TODO: Fix social media button display problems */
+/* TODO: Global column gap? */
+#article-tool {
+    column-gap: var(--gap-3);
+}
 #article-tool .btn-outline {
     --height: 1.5em;
     --padding: 0.65em;
