@@ -30,18 +30,25 @@ window.addEventListener('load', fade);
 
 
 // Navbar background color & FAB opacity
-const getVH = () => {
-    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-    return vh;
+function vh(percent) {
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    return (percent * h) / 100;
 }
-window.onscroll = function(event) {
+function getScrollYMax() {
+    var limit = Math.max(document.body.scrollHeight, 
+        document.body.offsetHeight, 
+        document.documentElement.clientHeight, 
+        document.documentElement.scrollHeight, 
+        document.documentElement.offsetHeight) - window.innerHeight;
+    return limit;
+}
+
+const navBG = () => {
+    // L: 40%, S: 5%
     var navbar = document.getElementById('main-navbar');
-    var fabs = document.getElementById('main-fab');
-    var scroll = window.scrollY;
-    // L: 0.4, S: 0.05
-    var navbarBreakpoint = 0.05 * getVH();
-    var fabBreakpoint = 0.5 * getVH();
-    if(scroll < navbarBreakpoint) {
+    var navbarBreakpoint = vh(5);
+
+    if(window.scrollY < navbarBreakpoint) {
         navbar.style.backgroundColor = 'transparent';
         navbar.classList.remove('neumorphism');
     }
@@ -49,10 +56,18 @@ window.onscroll = function(event) {
         navbar.style.backgroundColor = 'var(--navbar-color)';
         navbar.classList.add('neumorphism');
     }
-    if(scroll < fabBreakpoint) {
+}
+const fabVis = () => {
+    var fabs = document.getElementById('main-fab');
+    var fabBreakpoint = vh(50);
+
+    if(window.scrollY < fabBreakpoint || window.scrollY > (getScrollYMax() - vh(10))) {
         fabs.classList.remove('fade-in');
     }
     else {
         fabs.classList.add('fade-in');
     }
 }
+
+window.addEventListener('scroll', navBG);
+window.addEventListener('scroll', fabVis);

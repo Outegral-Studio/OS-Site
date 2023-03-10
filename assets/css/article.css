@@ -27,17 +27,29 @@
     height: 1px;
     background-color: var(--color-grey);
 }
+
 .info-panel {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-main {
+/* TODO: Restrict same row height */
+#articles-card-list {
     display: grid;
-    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
 }
 
+@media screen and (max-width: 1400px) {
+    #articles-card-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 768px) {
+    #articles-card-list {
+        grid-template-columns: 1fr;
+    }
+}
 @media screen and (max-width: 576px) {
     .main-layout {
         font-weight: 300 !important;
@@ -81,23 +93,27 @@ main {
 
 /* Article Info bar */
 .article-info {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: flex-start;
+    place-items: center;
+    align-content: center;
     text-decoration: none;
 }
 
 .author-img {
-    --img-radius: 2.5rem;
-    --width: 2px;
+    --height: 3rem;
 
-    height: var(--img-radius);
-    border-radius: var(--img-radius);
-    outline-offset: calc(1.5 * var(--width));
-    outline: var(--color-grey) var(--width) solid;
+    aspect-ratio: 1 / 1;
+    max-height: var(--height);
+    display: flex;
+    place-items: center;
+    place-content: center;
+    border-radius: var(--height);
 }
 .author-img img {
-    height: inherit;
-    border-radius: var(--img-radius);
+    height: 100%;
+    border-radius: var(--height);
 }
 
 .author {
@@ -119,8 +135,9 @@ main {
     line-height: var(--article-line-height);
 }
 .main-article iframe {
-    width: 100%;
-    height: auto;
+	aspect-ratio: 16 / 9;
+	height: 100%;
+	width: 100%;
 }
 .main-article img:not(.emoji) {
     max-width: 100%;

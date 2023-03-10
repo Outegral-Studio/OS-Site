@@ -54,6 +54,12 @@ body {
     align-self: center;
 }
 
+/* TODO: Swap neumorphism style on :active
+#quest-card-list a:active {
+
+}
+ */
+
 .temp-img {
     --img-radius: 1rem;
 
@@ -77,6 +83,11 @@ body {
     }
     .introduction section::after {
         grid-area: _sec_after;
+    }
+
+    #quest-card-list {
+        display: flex;
+        place-content: space-between;
     }
 }
 
