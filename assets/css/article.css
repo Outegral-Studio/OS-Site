@@ -34,6 +34,13 @@
     justify-content: space-between;
 }
 
+.author {
+    display: grid;
+    place-content: start;
+    row-gap: var(--gap-1);
+    text-align: justify;
+}
+
 @media screen and (max-width: 576px) {
     .main-layout {
         font-weight: 300 !important;
