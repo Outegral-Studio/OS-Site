@@ -53,22 +53,7 @@ body {
     display: grid;
     align-self: center;
 }
-
-/* TODO: Swap neumorphism style on :active
-#quest-card-list a:active {
-
-}
- */
-
-.temp-img {
-    --img-radius: 1rem;
-
-    width: auto;
-    height: calc(var(--img-radius) * 2);
-    border-radius: var(--img-radius);
-}
-
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
     .introduction section {
         grid-template-columns: 1fr 2fr;
         grid-template-areas:"_h2 _p"
@@ -83,11 +68,6 @@ body {
     }
     .introduction section::after {
         grid-area: _sec_after;
-    }
-
-    #quest-card-list {
-        display: flex;
-        place-content: space-between;
     }
 }
 

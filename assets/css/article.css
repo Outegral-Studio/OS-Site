@@ -34,22 +34,6 @@
     justify-content: space-between;
 }
 
-/* TODO: Restrict same row height */
-#articles-card-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-@media screen and (max-width: 1400px) {
-    #articles-card-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media screen and (max-width: 768px) {
-    #articles-card-list {
-        grid-template-columns: 1fr;
-    }
-}
 @media screen and (max-width: 576px) {
     .main-layout {
         font-weight: 300 !important;
@@ -94,6 +78,7 @@
 /* Article Info bar */
 .article-info {
     display: grid;
+    position: relative;
     grid-auto-flow: column;
     justify-content: flex-start;
     place-items: center;
@@ -101,27 +86,24 @@
     text-decoration: none;
 }
 
-.author-img {
-    --height: 3rem;
-
+.thumb-img {
     aspect-ratio: 1 / 1;
-    max-height: var(--height);
     display: flex;
     place-items: center;
     place-content: center;
-    border-radius: var(--height);
 }
-.author-img img {
-    height: 100%;
+.thumb-img .author-img {
+    --height: 3rem;
+    --stroke: 1px;
+    
+    height: var(--height);
     border-radius: var(--height);
+    outline-offset: calc(2 * var(--stroke));
+    outline: var(--color-grey) var(--stroke) solid;
 }
 
+/* TODO: Clean this */
 .author {
-    display: grid;
-    place-items: left;
-    place-content: center;
-    row-gap: var(--gap-1);
-
     font-weight: 400;
     font-size: 1rem;
 }
