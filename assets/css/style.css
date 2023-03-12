@@ -212,38 +212,44 @@ body {
     color: var(--text-color);
 }
 .card {
-    --radius: 2rem;
-    --border: 0.8rem;
+    --card-radius: 2rem;
+    --card-border: 1rem;
 
-    overflow: hidden;
+    min-height: 6rem;
+    padding: var(--card-border);
+    overflow: clip;
     display: flex;
     place-items: center;
     place-content: start;
     row-gap: var(--gap-3);
     column-gap: var(--gap-3);
-
-    background-color: var(--bg-color);
-    border: var(--bg-color) var(--border) solid;
-    border-radius: var(--radius);
+    
+    border: none;
+    border-radius: var(--card-radius);
     text-decoration: none;
 }
 .card:hover {
     color: var(--highlight-color);
 }
 .card > *:first-child {
-    --img-radius: calc(var(--radius) - var(--border));
+    --img-radius: calc(var(--card-radius) - var(--card-border));
+
     aspect-ratio: 1 / 1;
     width: 100%;
     height: auto;
-    border-radius: 0 0 var(--img-radius) var(--img-radius);
+    object-fit: cover;
+    border-radius: var(--img-radius);
 }
 .card-content {
-    margin: var(--gap-3);
+    margin: var(--gap-2);
     display: grid;
-    place-items: center;
+    place-items: center; 
     place-content: start;
     row-gap: var(--gap-1);
     text-align: justify;
+}
+.card-content :first-child {
+    text-align: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -251,17 +257,20 @@ body {
         grid-template-columns: 1fr;
     }
     .card {
-        max-height: calc(4 * var(--radius));
+        max-height: calc(2 * var(--card-radius) + 10vw);
+        
         flex-direction: row;
         place-content: flex-start;
     }
     .card > *:first-child {
         height: 100%;
         width: auto;
-        border-radius: 0 var(--img-radius) var(--img-radius) 0;
     }
     .card-content {
         place-items: start;
+    }
+    .card-content :first-child {
+        text-align: justify;
     }
 }
 
@@ -323,6 +332,9 @@ body {
 
 /* Button with outline */
 .btn-pill {
+    padding-left: var(--gap-3);
+    padding-right: var(--gap-3);
+
     color: var(--color-grey);
     fill: var(--color-grey);
     border: none;
@@ -357,7 +369,8 @@ body {
     color: var(--highlight-color) !important;
     fill: var(--highlight-color) !important;
     
-    transform: scale(90%);
+    /* TODO: I cannot decide QQ */
+    /* transform: scale(90%); */
 }
 
 /* Text */
@@ -451,12 +464,21 @@ img.emoji {
     box-shadow: 0rem 0rem 1rem -0.5rem var(--shadow-color);
 }
 
+.border-grey {
+    border: var(--color-grey) 1px solid;
+}
+
 .neumorphism {
     --offset: 8px;
     /* background: linear-gradient(145deg, #e0dfdf, #ffffff); */
     /* background: linear-gradient(145deg, #26262e, #2d2d37); */
+    background: var(--bg-color);
     box-shadow: var(--offset) var(--offset) calc(2 * var(--offset)) var(--n1-color),
                 calc(-1 * var(--offset)) calc(-1 * var(--offset)) calc(2 * var(--offset)) var(--n2-color);
+}
+.neumorphism:not(#main-navbar):active {
+    box-shadow: inset var(--offset) var(--offset) calc(2 * var(--offset)) var(--n1-color),
+                inset calc(-1 * var(--offset)) calc(-1 * var(--offset)) calc(2 * var(--offset)) var(--n2-color);
 }
 
 .neumorphism-inset {
@@ -469,13 +491,9 @@ img.emoji {
     text-shadow: 0.1em 0.1em 0.3em var(--bg-color);
 }
 
-.border {
-    border: var(--text-color) 3px solid !important;
-}
-
 /* Transitions */
 .transition {
-    transition: all ease-in-out var(--trans-duration);
+    transition: all ease-in-out var(--trans-duration) !important;
 }
 body, .navbar, .fab-container {
     transition: all ease-in-out var(--trans-duration);

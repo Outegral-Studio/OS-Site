@@ -46,12 +46,9 @@ body {
     row-gap: var(--gap-6);
     column-gap: var(--gap-6);
 }
-.introduction section::after {
+.introduction > *:not(:last-child):after {
     content: '．．．';
     color: var(--text-color);
-
-    display: grid;
-    align-self: center;
 }
 @media screen and (min-width: 1400px) {
     .introduction section {
