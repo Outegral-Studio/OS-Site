@@ -68,6 +68,5 @@ const fabVis = () => {
         fabs.classList.add('fade-in');
     }
 }
-
 window.addEventListener('scroll', navBG);
 window.addEventListener('scroll', fabVis);

@@ -118,6 +118,7 @@
 /* Main Article */
 .main-article {
     display: grid;
+    position: relative;
     row-gap: var(--gap-6);
 
     text-align: justify;
@@ -217,6 +218,37 @@ br {
 .blockquote :is(:first-child) {
     background: none;
     align-self: top;
+}
+
+.bubble {
+    --radius-lg: var(--gap-3);
+    --radius-sm: var(--gap-1);
+    width: fit-content;
+    max-width: 70%;
+    display: block;
+    margin-top: var(--gap-1);
+    padding-top: var(--gap-1);
+    padding-bottom: var(--gap-1);
+    padding-left: var(--gap-3);
+    padding-right: var(--gap-3);
+
+    background-color: rgb(255, 137, 102, 0.15);
+    border-radius: var(--radius-lg);
+}
+.bubble-left {
+    justify-content: flex-start;
+    text-align: start;
+    border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) var(--radius-sm);
+    transform-origin: bottom left;
+}
+.bubble-right {
+    margin-left: auto; 
+    margin-right: 0;
+
+    justify-content: flex-end;
+    text-align: end;
+    border-radius: var(--radius-lg) var(--radius-lg) var(--radius-sm) var(--radius-lg);
+    transform-origin: bottom right;
 }
 
 .text-bold {

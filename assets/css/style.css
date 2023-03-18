@@ -7,7 +7,6 @@
 
 html {
     font-size: 16px;
-    scroll-behavior: smooth;
 }
 
 /* Color theme */
@@ -33,7 +32,6 @@ html {
     --color-deep-blue: #303039; /* Jet */
     --color-black: #202123;
 }
-
 :root,
     /* Default dark, therefore this should place first */
     html[data-user-theme='dark'] {
@@ -267,6 +265,7 @@ body {
         width: auto;
     }
     .card-content {
+        height: 100%;
         place-items: start;
     }
     .card-content :first-child {
